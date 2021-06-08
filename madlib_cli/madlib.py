@@ -31,12 +31,12 @@ def parse_template (text):
     •  the for loop replace all values above in the text with empty string {} in the text file.
     then we have an text and array.
     """
-    counter=0
+    index=0
     origin_value=re.findall(r"\{(.*?)\}", text)  
 
     for i in origin_value:
-        text= text.replace(origin_value[counter], "",1)
-        counter+=1
+        text= text.replace(origin_value[index], "",1)
+        index+=1
     return text, origin_value 
 
 
