@@ -44,15 +44,15 @@ def parse_template (text):
 parse_template (read_template('../assets/In_video_game.txt'))
 reading_template=read_template('../assets/In_video_game.txt')
 
-text,origin_value=parse_template (reading_template)
+text,origin_value=parse_template (reading_template) 
 
 
 def merge(text,origin_value):
-    print(text.format(*origin_value))   # specified value(s) and insert them inside the string's placeholder..
+    print(text.format(*origin_value))   # just merging data using .format we used * to destruct tha array and publish it on {}
     return  text.format(*origin_value)
     
     
-merge("It was a {} and {} {}.", ("dark", "stormy", "night"))
+merge("It was a {} and {} {}.", ("dark", "stormy", "night")) #check
    
 def result( text,origin_value):
     input_user=[]
@@ -64,7 +64,7 @@ def result( text,origin_value):
 
 result( text, origin_value)  
 
-# print(parse_template (read_template('../assets/In_video_game.txt')))     
+
 
 
 
