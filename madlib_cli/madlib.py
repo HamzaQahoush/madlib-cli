@@ -58,7 +58,7 @@ def result( text,origin_value):
     input_user=[]
 
     for i in origin_value:
-        input_user.append(input(f"enter an { i} "))  #take the variable in bracket as question to user depends on th
+        input_user.append(input(f"enter an { i} "))  #take the variable in bracket as question to user depends on the origin values .
     print (text.format(*input_user)) 
     return text.format(*input_user)   
 
