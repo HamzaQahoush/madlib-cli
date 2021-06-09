@@ -51,9 +51,14 @@ text,origin_value=parse_template (reading_template)
 
 
 def merge(text,origin_value):
-    print(text.format(*origin_value))   # just merging data using .format we used * to destruct tha array and publish it on {}
-    return  text.format(*origin_value)
-    
+    print(text.format(*origin_value)) 
+    updatedText= text.format(*origin_value)
+    with open('../assets/make_me_a_video_game_output.txt','w') as output:
+        output.write(updatedText)
+    return updatedText 
+     # just merging data using .format we used * to destruct tha array and publish it on {}
+   
+
     
 merge("It was a {} and {} {}.", ("dark", "stormy", "night")) #check
    
@@ -62,8 +67,8 @@ def result( text,origin_value):
 
     for i in origin_value:
         input_user.append(input(f"enter an { i} "))  #take the variable in bracket as question to user depends on the origin values .
-    print (text.format(*input_user)) 
-    return text.format(*input_user)   
+   
+    return merge(text,input_user)   
 
 result( text, origin_value)  
 
