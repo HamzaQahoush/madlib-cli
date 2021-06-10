@@ -1,9 +1,5 @@
 import re
 
-print("""
-Welcome to Madlib Game 😉
-You will enjoy playing with us 😎
-""")
 
 
 def read_template(root):
@@ -18,10 +14,10 @@ def read_template(root):
         return content
 
     except FileNotFoundError:
-        return ('The file not found')    
+        raise FileNotFoundError('The file not found')    
       
     except Exception as a :
-        print (f"Error {a}")
+        return (f"Error {a}")
 
    
 
@@ -40,27 +36,26 @@ def parse_template (text):
     for i in origin_value:
         text= text.replace(origin_value[index], "",1)
         index+=1
-    return text, origin_value 
+    return text, tuple(origin_value)
 
 
 
-parse_template (read_template('../assets/make_me_a_video_game_template.txt'))
-reading_template=read_template('../assets/make_me_a_video_game_template.txt')
 
-text,origin_value=parse_template (reading_template) 
 
 
 def merge(text,origin_value):
-    print(text.format(*origin_value)) 
+    # print(text.format(*origin_value)) 
     updatedText= text.format(*origin_value)
-    with open('../assets/make_me_a_video_game_output.txt','w') as output:
+    print(updatedText)
+    with open('assets/make_me_a_video_game_output.txt','w') as output:
         output.write(updatedText)
     return updatedText 
+
      # just merging data using .format we used * to destruct tha array and publish it on {}
    
 
     
-merge("It was a {} and {} {}.", ("dark", "stormy", "night")) #check
+
    
 def result( text,origin_value):
     input_user=[]
@@ -70,8 +65,19 @@ def result( text,origin_value):
    
     return merge(text,input_user)   
 
-result( text, origin_value)  
 
+
+if __name__ == "__main__":
+
+ print("""
+ Welcome to Madlib Game 😉
+You will enjoy playing with us 😎
+""")
+ reading_template=read_template('assets/make_me_a_video_game_template.txt')
+ parse_template (reading_template)
+ text,origin_value=parse_template (reading_template) 
+ result( text, origin_value)  
+ 
 
 
 
