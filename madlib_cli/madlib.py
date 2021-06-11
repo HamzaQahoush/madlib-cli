@@ -47,11 +47,14 @@ def merge(text,origin_value):
     # print(text.format(*origin_value)) 
     updatedText= text.format(*origin_value)
     print(updatedText)
+
     with open('assets/make_me_a_video_game_output.txt','w') as output:
         output.write(updatedText)
-    return updatedText 
 
-     # just merging data using .format we used * to destruct tha array and publish it on {}
+    return updatedText    
+  
+
+    # just merging data using .format we used * to destruct tha array and publish it on {}
    
 
     
@@ -75,8 +78,10 @@ You will enjoy playing with us 😎
 """)
  reading_template=read_template('assets/make_me_a_video_game_template.txt')
  parse_template (reading_template)
- text,origin_value=parse_template (reading_template) 
+ text,origin_value=parse_template (reading_template)
  result( text, origin_value)  
+
+
  
 
 
